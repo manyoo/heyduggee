@@ -1,0 +1,10 @@
+{
+  "name": "heyduggee",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eric Wong <eric.wong@clean.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
