@@ -17,13 +17,12 @@ main = void $ listenHttp app 8033 callback
     where app = get "/heyduggee/:name" handleReq
           callback _ = pure unit
 
-
 handleReq :: HandlerM Unit
 handleReq = do
     p <- getRouteParam "name"
     case p of
-        Just name -> send $ fromMaybe "" $ toString <$> searchName name
-        Nothing   -> send ""
+        Just name -> send $ fromMaybe ("抱歉，没找到" <> name) $ toString <$> searchName name
+        Nothing   -> send "好可惜，没找到哦"
 
 type Season = Int
 type Episode = Int
@@ -150,7 +149,7 @@ secondSeason = [
     "47.阿奇和派对徽章",
     "48.阿奇和导游徽章",
     "49.阿奇和航海徽章",
-    "50.阿奇和幼稚徽章",
+    "50.阿奇和钥匙徽章",
     "51.阿奇和时装徽章",
     "52.阿奇和眼镜徽章"
     ]
@@ -177,5 +176,15 @@ thirdSeason = [
     "18.阿奇和历史徽章",
     "19.阿奇和艺术徽章",
     "20.阿奇和疯狂高球徽章",
-    "21.阿奇和大奇案徽章"
+    "21.阿奇和大奇案徽章",
+    "22.阿奇和选举徽章",
+    "23.阿奇和混音带徽章",
+    "24.阿奇和味觉徽章",
+    "25.阿奇和生物学徽章",
+    "26.阿奇和水滩徽章",
+    "27.阿奇和游戏节目徽章",
+    "28.阿奇和牛仔徽章",
+    "29.阿奇和我的最爱徽章",
+    "30.阿奇和绿雕塑徽章",
+    "31.阿奇和阿卡贝拉徽章"
     ]
